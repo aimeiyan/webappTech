@@ -1,0 +1,51 @@
+参考网址：
+注：1、2、3、4讲rem移动页面布局
+1、https://segmentfault.com/a/1190000003931773?utm_source=tuicool&utm_medium=referral
+2、http://www.codeceo.com/article/font-size-web-design.html
+3、https://github.com/amfe/lib-flexible
+4、https://github.com/amfe/article/issues/17  使用Flexible实现手淘H5页面的终端适配
+http://huodong.m.taobao.com/act/yibo.html
+
+
+
+http://www.h5cn.com/html5/jishu/201512740.html
+http://www.cocoachina.com/webapp/20150616/12070.html
+移动Web资源整理
+
+http://taobaofed.org/blog/2015/11/04/mobile-rem-problem/
+http://www.aliued.com/?p=2549
+http://www.cocoachina.com/webapp/20151112/14188.html
+
+
+参考的pdf（即保存的网页）：
+1、移动端web app自适应布局探索与总结 - 前端足迹 - SegmentFault.pdf
+
+
+总结：
+1、把与元素尺寸有关的css，如width,height,line-height,margin,padding等都以rem作为单位。
+2、font-size可能需要额外的媒介查询，并且font-size不能使用rem，所以需要下面的代码设置字体的大小。
+
+ /*-------------------------------- 此处的样式根据需求添加 --------------------------------*/
+        @media screen and (max-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 413px) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (min-width: 414px) and (max-width: 639px) {
+            body {
+                font-size: 17px;
+            }
+        }
+
+        @media screen and (min-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+        }

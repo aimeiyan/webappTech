@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>retina 屏对像素的现实效果demo</title>
+    <link rel="stylesheet" type="text/css" href="webappReset.css">
+    <style>
+        .img-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+ .img-wrapper ul {
+    /*width: 6.13rem;*/
+ }
+        .img-wrapper ul li {
+            float: left;
+            display: block;
+        }
+
+          .img-wrapper ul li img{
+            display: block;
+          }
+
+    </style>
+</head>
+<body>
+<br>
+<br>
+<section class="img-wrapper">
+    <ul class="clearfix">
+        <li><img src="../images/add.png" alt=""></li>
+        <li><img src="../images/ren.png" alt=""></li>
+        <li><img src="../images/ren.png" alt=""></li>
+        <li><img src="../images/ren.png" alt=""></li>
+        <li><img src="../images/ren.png" alt=""></li>
+    </ul>
+</section>
+<table>
+    <tr>
+        <td>标题</td>
+        <td>一句话描述你的神技能</td>
+    </tr>
+    <tr>
+        <td>定价</td>
+        <td>￥10.00</td>
+    </tr>
+    <tr>
+        <td>类别</td>
+        <td>请选择服务类别</td>
+    </tr>
+</table>
+<script src="../js/zepto.min.js"></script>
+<script>
+    // $(function () {
+    //     var liwidth = 0;
+    //     $(".img-wrapper ul li").each(function (indx,element) {
+    //         var widhteve = $(element).width();
+    //         console.log(widhteve, '--');
+    //         liwidth += widhteve;
+    //     });
+
+    //     console.log(liwidth, "width");
+
+    //     $(".img-wrapper ul").width(liwidth);
+    // })
+</script>
+<script type="text/javascript">
+
+
+    /**
+     * 下面这段代码，不仅在页面初次加载的时候初始化了字体，
+     * 而且当显示窗口变化时，也自动改变了字体
+     */
+    (function () {
+        var dpr, rem, scale;
+        var docEl = document.documentElement;
+        var fontEl = document.createElement('style');
+        var metaEl = document.querySelector('meta[name="viewport"]');
+
+        dpr = window.devicePixelRatio || 1;
+        rem = docEl.clientWidth * dpr / 10;
+        scale = 1 / dpr;
+
+
+        // 设置viewport，进行缩放，达到高清效果
+        metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+
+        // 设置data-dpr属性，留作的css hack之用
+        docEl.setAttribute('data-dpr', dpr);
+
+        // 动态写入样式
+        // docEl.firstElementChild.appendChild(fontEl);
+        // fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+        docEl.style.fontSize=rem+'px';
+         
+
+        // 给js调用的，某一dpr下rem和px之间的转换函数
+        window.rem2px = function(v) {
+            v = parseFloat(v);
+            return v * rem;
+        };
+        window.px2rem = function(v) {
+            v = parseFloat(v);
+            return v / rem;
+        };
+
+        window.dpr = dpr;
+        window.rem = rem;
+
+    })();
+
+</script>
+</body>
+</html>

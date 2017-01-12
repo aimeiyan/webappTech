@@ -1,0 +1,57 @@
+webapp开发相关大杂烩：
+http://www.cnblogs.com/Gdot/p/5390428.html
+http://www.cocoachina.com/webapp/20150616/12070.html   移动Web资源整理
+H5之家
+
+
+https://segmentfault.com/a/1190000003931851
+利用HTML和CSS实现常见的布局
+
+
+未看的技术文章：
+1、http://www.w3cfuns.com/notes/26978/cc7a52a9b1646fff22baf23c7b76679f.html
+2、http://www.w3cfuns.com/notes/17567/a53c7b7f36791737b6b36fb9cd2b1ce4.html
+3、http://www.w3cfuns.com/notes/17647/a372c4e4f363fcdde3722ea8d7e7fb79.html
+4、http://www.w3cfuns.com/notes/16270/ec5d9a2a8eeed9c521991b3aece26f4c.html
+5、http://www.w3cfuns.com/notes/28139/5558738b88fbdd12c3698351f750f168.html
+6、http://www.w3cfuns.com/notes/17799/9a1c7dfcf02aba42f822edf30717c7ba.html
+7、http://www.w3cfuns.com/notes/26218/4b9afca8ed7598c23027ed40c87af799.html
+8、http://www.w3cfuns.com/notes/28851/44af1e17d04edcf672c77210b46a7275.html
+9、http://tobyj.net/responsive-sprites/
+10、https://github.com/DMQ/mTouch
+11、https://segmentfault.com/a/1190000003932970
+12、http://www.csdn.net/article/2013-07-09/2816161
+
+可能需要模仿制作的webapp页面
+1、http://mobileangularui.com/
+
+
+
+
+
+
+
+
+总结：
+一、移动开发tip：
+    1、移动端主要的浏览器内核是webkit，貌似浏览器内核就是javascript引擎，有wenkit（android和ios系统）和greasemonkey（firefox os系统）。
+    2、移动端主要的操作系统：Android、ios、firefox os。
+    3、移动开发注意：屏幕分辨率、用css3代替传统的dom animation
+    4、css3是使用设备GPU来渲染的，效率要比dom animation效率高很多
+    5、开发框架和库：jQuery mobile、angluar mobile、zeptoJs。
+    http://zeptojs.com/
+    6、针对开发者的20款移动开发框架 http://www.csdn.net/article/2013-07-09/2816161
+    7、touch事件支持多点触摸
+    8、用canvas的drawImage(image,x,y,width,height)代替image展示图片效率和性能会高
+
+二：CSS3 Animation
+1、@keyframes 名字 关键帧
+    animation-name：动画名称
+    animation-duration：动画持续时间
+    animation-delay：延迟执行时间
+    animation-timing-function：动画形变函数指定
+    是animation-timing-function是控制时间的属性，在取值中除了常用到的 三次贝塞尔曲线 以外，还有个很高级的 steps() 函数，steps函数也就是整个圣诞主题的关键知识点。steps要配合精灵图使用，简单来说就是用来切换多个精灵图的，形成帧动画，类似setTimeout的处理感觉
+    animation-play-state：播放状态指定
+
+2、css3框架 animate.css
+http://daneden.github.io/animate.css/

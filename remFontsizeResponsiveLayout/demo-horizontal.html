@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于rem的页面适配方案</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        .clearfix:before, .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+            overflow: hidden;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .line > div {
+            float: left;
+            margin: .5rem 0 0 .5rem;
+        }
+
+        .icon {
+            width: 1.4rem; /* 像素换算rem：140px / 100 = 1.4rem */
+            height: 1.4rem;
+            /*margin: 0 0 0 .5rem;*/
+            background-image: url("images/1.jpg");
+            background-repeat: no-repeat;
+            /*background-size: 1.4rem;*/
+            background-size: 5.2rem;
+        }
+
+        .icon1 {
+            background-position: 0 0;
+        }
+
+        .icon2 {
+            background-position: 0 -1.4rem;
+        }
+
+        .icon2:after {
+            background-position: 0 -140rem;
+        }
+
+        .icon3 {
+            background-position: 0 -2.8rem;
+        }
+
+        .icon3 {
+            background-position: 0 -280rem;
+        }
+
+        .icon5 {
+            background-position: -1.4rem 0;
+        }
+
+        .icon5:after {
+            background-position: -140rem 0;
+        }
+
+        .icon6 {
+            background-position: -1.4rem -1.4rem;
+        }
+
+        .icon6:after {
+            background-position: -140rem -140rem;
+        }
+
+        .icon7 {
+            background-position: -1.4rem -2.8rem;
+        }
+
+        .icon7:after {
+            background-position: -140rem -280rem;
+        }
+
+        .icon-fix {
+            background: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-fix:after {
+            content: '';
+            display: block;
+            width: 10000%;
+            height: 10000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("images/1.jpg");
+            background-repeat: no-repeat;
+            background-size: 520rem;
+            -webkit-transform-origin: 0 0;
+            -webkit-transform: scale(.01);
+            transform-origin: 0 0;
+            transform: scale(.01);
+        }
+
+        .icon3:after {
+            background-position: 0 -280rem;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="line clearfix">
+        <div class="icon icon1"></div>
+        <div class="icon icon2 icon-fix"></div>
+        <div class="icon icon3 icon-fix"></div>
+        <!--<div class="icon icon4"></div>-->
+    </div>
+    <div class="line clearfix">
+        <div class="icon icon5 icon-fix"></div>
+        <div class="icon icon6 icon-fix"></div>
+        <div class="icon icon7 icon-fix"></div>
+        <!--<div class="icon icon8"></div>-->
+    </div>
+
+</div>
+<div>基于rem的页面适配方案</div>
+<script type="text/javascript">
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            console.log(windowWidth);
+            html.style.fontSize = windowWidth / 6.4 + 'px';
+//            html.style.fontSize = windowWidth / 7.5 + 'px';
+            console.log(html.style.fontSize);
+            // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
+        }, false);
+    })();
+
+    // 这个6.4就是根据设计稿的横向宽度来确定的，假如你的设计稿是750
+    // 那么 html.style.fontSize = windowWidth / 7.5 + 'px';
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>retina 屏对像素的现实效果demo</title>
+    <link rel="stylesheet" type="text/css" href="webappReset.css">
+    <style>
+        body {
+            padding: 1rem;
+        }
+
+        section {
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+
+    <div style="width: 100px;height: 100px">
+        <img src="../images/gridGraph.png" class="img-100-width">
+        <span>模糊</span>
+    </div>
+</section>
+<hr>
+<section>
+
+    <div style="width: 50px;height: 50px">
+        <img src="../images/gridGraph.png" class="img-100-width">
+        <span>清晰</span>
+    </div>
+</section>
+<hr>
+<section>
+
+    <div style="width: 25px;height: 25px">
+        <img src="../images/gridGraph.png" class="img-100-width">
+        <span>色差</span>
+    </div>
+</section>
+<hr>
+<section>
+
+    <div style="width: 100px;height: 100px">
+        <img src="../images/aiLetter.png" class="img-100-width">
+        <span>模糊</span>
+    </div>
+</section>
+<hr>
+<section>
+
+    <div style="width: 50px;height: 50px">
+        <img src="../images/aiLetter.png" class="img-100-width">
+        <span>清晰</span>
+    </div>
+</section>
+<hr>
+<section>
+
+    <div style="width: 25px;height: 25px">
+        <img src="../images/aiLetter.png" class="img-100-width">
+        <span>色差</span>
+    </div>
+</section>
+</body>
+</html>

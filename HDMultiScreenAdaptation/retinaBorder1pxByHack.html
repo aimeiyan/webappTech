@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>retina 屏对像素的现实效果demo</title>
+    <link rel="stylesheet" type="text/css" href="webappReset.css">
+    <style>
+        body {
+            padding: 1rem;
+        }
+
+        section div {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .normal {
+            border-bottom: 1px solid #000;
+        }
+
+        .scale {
+            position: relative;
+        }
+
+        .scale:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            border-bottom: 1px solid #000;
+            -webkit-transform: scaleY(.5);
+            -webkit-transform-origin: 0 0;
+        }
+
+    </style>
+</head>
+<body>
+<br>
+<br>
+<section>
+    <div class="normal">
+    </div>
+</section>
+<br>
+<br>
+<section>
+    <div class="scale">
+
+    </div>
+</section>
+</body>
+</html>

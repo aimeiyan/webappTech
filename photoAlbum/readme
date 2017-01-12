@@ -1,0 +1,18 @@
+一、移动开发tip：
+    1、移动端主要的浏览器内核是webkit，貌似浏览器内核就是javascript引擎，有wenkit（android和ios系统）和greasemonkey（firefox os系统）。
+    2、移动端主要的操作系统：Android、ios、firefox os。
+    3、移动开发注意：屏幕分辨率、用css3代替传统的dom animation
+    4、css3是使用设备GPU来渲染的，效率要比dom animation效率高很多
+    5、开发框架和库：jQuery mobile、angluar mobile、zeptoJs。
+    6、针对开发者的20款移动开发框架 http://www.csdn.net/article/2013-07-09/2816161
+    7、touch事件支持多点触摸
+    8、用canvas的drawImage(image,x,y,width,height)代替image展示图片效率和性能会高
+    9、testImageObject.html 是关于创建了image object的实例。
+
+二：CSS3 Animation
+@keyframes 名字 关键帧
+animation-name：动画名称
+animation-duration：动画持续时间
+animation-delay：延迟执行时间
+animation-timing-function：动画形变函数指定
+animation-play-state：播放状态指定

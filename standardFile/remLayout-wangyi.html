@@ -1,0 +1,89 @@
+
+<!-- 基于rem的响应式布局：方案一，参考下面js代码 -->
+<!-- 网易新闻webapp用的就是这个字体方案，设计原型图稿是750px -->
+<!-- 方块和图片的宽度是根据html的字体计算的，字体也是根据html的字体计算的 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>基于rem的html字体设置</title>
+    <meta name="viewport"
+          content=" height = device-height,
+    width = device-width,
+    initial-scale = 1.0,
+    minimum-scale = 1.0,
+    maximum-scale = 1.0,
+    user-scalable = no"/>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        section {
+            background: red;
+        }
+
+        .page {
+            width: 5rem;
+            height: 10rem;
+            background: yellow;
+            font-size: 0.3rem;
+        }
+
+        p{
+            font-size: 0.34rem;
+        }
+
+        .green{
+            width: 1.4rem;
+            height: 1.4rem;
+            background-color: green;
+            font-size: 0.34rem;   
+        }
+    </style>
+</head>
+
+<body>
+<section>
+    <p>(1)对于该字体，在750px的原型图上，字体大小是34px，那么字体的为34/100=0.34rem；
+    (2)如果所给的原型图是750px，其中有个绿色的方块，框和高都是140px，那么这个方块的宽高为140/100=1.4rem;</p>
+    <div class="green">greren</div>
+</section>
+</body>
+<script type="text/javascript">
+    (function () {
+        var docEl = document.documentElement;
+        //当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，
+        //注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。
+        //总的来说就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var recalc = function () {
+
+            //这个640是根据设计稿的横向宽度来确定的，假如你的设计稿是750，那就填写750
+            // var windowWidth = docEl.clientWidth > 640 ? 640 : docEl.clientWidth;
+            var windowWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth;
+
+
+            //设置根字体大小
+            // docEl.style.fontSize = (windowWidth / 6.4) + 'px';
+            // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
+            docEl.style.fontSize = (windowWidth / 7.5) + 'px';
+            // 这个6.4就是根据设计稿的横向宽度来确定的，假如你的设计稿是750
+            // 那么 html.style.fontSize = windowWidth / 7.5 + 'px';
+
+            console.log(resizeEvt,windowWidth,docEl.style.fontSize);
+
+        };
+
+
+        //绑定浏览器缩放与加载时间
+        window.addEventListener(resizeEvt, recalc, false);
+        document.addEventListener('DOMContentLoaded', recalc, false);
+
+    })();
+</script>
+
+</html>

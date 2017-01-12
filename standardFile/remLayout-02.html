@@ -1,0 +1,267 @@
+<!-- 基于rem的响应式布局：方案二，参考下面js代码 -->
+<!-- 方块和图片的宽度是根据html的字体计算的，但是字体不是，字体是利用媒体查询设置的 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于rem的页面适配方案</title>
+    <!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        .clearfix:before, .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+            overflow: hidden;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        body {
+            width: 100%;
+            font-family: Helvetica, tahoma, arial, sans-serif;
+            background-color: #fff;
+            color: #3f3f3f;
+        }
+
+        /*font-size可能需要额外的媒介查询，并且font-size不能使用rem，所以需要下面的代码设置字体的大小*/
+        /*-------------------------------- 此处的样式根据需求添加 --------------------------------*/
+        @media screen and (max-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 413px) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (min-width: 414px) and (max-width: 639px) {
+            body {
+                font-size: 17px;
+            }
+        }
+
+        @media screen and (min-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+        }
+
+        body, div {
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+
+        body {
+            width: 6.4rem;
+        }
+
+        .line {
+            width: 100%;
+        }
+
+        .line > div {
+            float: left;
+            margin: .5rem 0 0 .5rem;
+        }
+
+        .icon {
+            width: 1.4rem; /* 像素换算rem：140px / 100 = 1.4rem */
+            height: 1.4rem;
+            /*margin: 0 0 0 .5rem;*/
+            background-image: url(images/sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1.4rem;
+            /*background-size: 5.2rem;*/
+        }
+
+        .icon-fix {
+            background: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-fix:after {
+            content: '';
+            display: block;
+            width: 10000%;
+            height: 10000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("images/sprite.png");
+            background-repeat: no-repeat;
+            background-size: 140rem;
+            -webkit-transform-origin: 0 0;
+            -webkit-transform: scale(.01);
+            transform-origin: 0 0;
+            transform: scale(.01);
+        }
+
+        .icon1 {
+            background-position: 0 0;
+        }
+
+        .icon2 {
+            background-position: 0 -1.4rem;
+        }
+
+        .icon2:after {
+            background-position: 0 -140rem;
+        }
+
+        .icon3 {
+            background-position: 0 -2.8rem;
+        }
+
+        .icon4 {
+            background-position: 0 -4.2rem;
+        }
+
+        .icon4:after {
+            background-position: 0 -420rem;
+        }
+
+        .icon5 {
+            background-position: 0 -4.2rem;
+        }
+
+        .icon6 {
+            background-position: 0 -5.6rem;
+        }
+
+        .icon7 {
+            background-position: 0 -7rem;
+        }
+
+        .icon7:after {
+            background-position: 0 -700rem;
+        }
+
+        .icon9 {
+            background-position: 0 -8.4rem;
+        }
+
+        .icon10 {
+            background-position: 0 -9.8rem;
+        }
+
+        .icon img {
+            display: none;
+        }
+
+        .icon-img {
+            background: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-img img {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        .icon12 img {
+            top: -400%;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="line clearfix">
+        <div class="icon icon1"></div>
+        <div class="icon icon2 icon-fix"></div>
+        <div class="icon icon3"></div>
+        <div class="icon icon4 icon-fix"></div>
+    </div>
+    <div class="line clearfix">
+        <div class="icon icon5"></div>
+        <div class="icon icon6"></div>
+        <div class="icon icon7 icon-fix"></div>
+        <!--<div class="icon icon8"></div>-->
+    </div>
+    <div class="line clearfix">
+        <div class="icon icon9"></div>
+        <div class="icon icon10"></div>
+        <!--<div class="icon icon11"></div>-->
+        <!--<div class="icon icon12"></div>-->
+    </div>
+    <div class="line clearfix">
+        <div class="icon icon12 icon-img">
+            <img src="images/sprite.png" alt=""/>
+        </div>
+    </div>
+</div>
+<div>基于rem的页面适配方案</div>
+<script type="text/javascript">
+
+    /**
+     *  下面这段注释掉的代码，只有在页面初次加载的时候初始化了字体
+     *  当显示窗口变化时，并没有自动改变字体
+     */
+    //    (function () {
+    //        document.addEventListener('DOMContentLoaded', function () {
+    //            var html = document.documentElement;
+    //            var windowWidth = html.clientWidth;
+    //            if (windowWidth > 640) windowWidth = 640;
+    //
+    //            console.log(windowWidth);
+    //            html.style.fontSize = windowWidth / 6.4 + 'px';
+    ////            html.style.fontSize = windowWidth / 7.5 + 'px';
+    //            console.log(html.style.fontSize);
+    //            // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
+    //        }, false);
+    //    })();
+    //
+    //    // 这个6.4就是根据设计稿的横向宽度来确定的，假如你的设计稿是750
+    //    // 那么 html.style.fontSize = windowWidth / 7.5 + 'px';
+
+
+    /**
+     * 下面这段代码，不仅在页面初次加载的时候初始化了字体，
+     * 而且当显示窗口变化时，也自动改变了字体
+     */
+    (function () {
+        var docEl = document.documentElement;
+        //当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，
+        //注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。
+        //总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var recalc = function () {
+
+            //这个640是根据设计稿的横向宽度来确定的，假如你的设计稿是750，那就填写750
+            var windowWidth = docEl.clientWidth > 640 ? 640 : docEl.clientWidth;
+
+            //设置根字体大小
+            docEl.style.fontSize = (windowWidth / 6.4) + 'px';
+            // 这个6.4就是根据设计稿的横向宽度来确定的，假如你的设计稿是750
+            // 那么 html.style.fontSize = windowWidth / 7.5 + 'px';
+
+        };
+
+        console.log(resizeEvt);
+
+        //绑定浏览器缩放与加载时间
+        window.addEventListener(resizeEvt, recalc, false);
+        document.addEventListener('DOMContentLoaded', recalc, false);
+
+    })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var img = new Image();
+    img.onload = function () {
+        debugger;    //可以在chrome的js调试窗口中看到this:img这个输出，从中可以看到宽和高
+    };
+
+    img.src = "http://dict.baidu.com/asset/img/logo-dict-new.gif";
+</script>
+</body>
+</html>
