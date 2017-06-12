@@ -1,0 +1,276 @@
+@charset "UTF-8";
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden], template {
+    display: none;
+}
+
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+a {
+    background: transparent;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
+figure {
+    margin: 1em 40px;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+/*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+/*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+
+ul, li, dl, dt, dd {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #F9F9F9;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    color: #8E8E8E;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/*头部*/
+header {
+    position: relative;
+    font-size: 0.9375rem;
+    text-align: center;
+    line-height: 3.125rem;
+    height: 3.125rem;
+    background: #ffffff;
+    color: #4A4A4A;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+header .funnbox {
+    position: absolute;
+    top: 2.1875rem;
+    right: 0.46875rem;
+    z-index: 999;
+}
+
+header .funnbox .funbar {
+    width: 7.65625rem;
+    background: #4A4A4A;
+    -moz-border-radius: 0.16625rem;
+    -webkit-border-radius: 0.16625rem;
+    border-radius: 0.16625rem;
+    margin-top: -0.0625rem;
+}
+
+header .funnbox .funbar li {
+    text-align: center;
+    font-size: 0.6875rem;
+    height: 1.8125rem;
+    line-height: 1.8125rem;
+    color: #ffffff;
+    border-top: 0.03125rem solid #C9C9CE;
+}
+
+header .funnbox .funbar li:first-child {
+    border-top: 0;
+}
+
+header .return {
+    font-size: 0.875rem;
+    width: 4.5rem;
+    text-align: left;
+    padding-left: 0.625rem;
+    color: #4DD0C8;
+    background: url("../images/arrow.png") no-repeat;
+    background-size: 0.375rem 0.75rem;
+    position: absolute;
+    top: 1.25rem;
+    left: 0.625rem;
+    line-height: 0.75rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

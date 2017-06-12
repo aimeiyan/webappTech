@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--引用方法1-->
+    <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+    <!--引用方法2-->
+    <script src="build/flexible_css.debug.js"></script>
+    <script src="build/flexible.debug.js"></script>
+    <link rel="stylesheet" href="webappReset.css">
+    <style>
+        /*此处省略初始化的样式*/
+        /*.clearfix:after {*/
+            /*content: ".";*/
+            /*display: block;*/
+            /*height: 0;*/
+            /*clear: both;*/
+            /*visibility: hidden*/
+        /*}*/
+
+        /*.clearfix {*/
+            /**+height: 1%;*/
+        /*}*/
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .baseIcon {
+            display: inline-block;
+            background: url("images/bg.png");
+            background-size: 6.666667rem 6.666667rem;
+        }
+
+        .msg-header {
+            position: relative;
+            padding: 0 0.4rem;
+            height: 1.28rem;
+            line-height: 1.28rem;
+            font-size: 0.48rem;
+            text-align: center;
+            border: 0.026667rem solid #eaeaea;
+        }
+
+        .iconBack {
+            position: absolute;
+            top: 0.373333rem;
+            left: 0.373333rem;
+            width: 0.346667rem;
+            height: 0.533333rem;
+            background-position: -1.493333rem -1.066667rem;
+        }
+
+        .msg-header .clear {
+            position: absolute;
+            right: 0.266667rem;
+            font-size: 0.4rem;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .media-left,
+        .media-right {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .media-right {
+            width: 100%;
+            border-bottom: 1px solid #eee;
+        }
+
+        .iconMsg {
+            width: 1.253333rem;
+            height: 1.253333rem;
+            background-position: -2.293333rem 0;
+        }
+
+        .media-left {
+            padding: 0.266667rem;
+        }
+
+        .msg-right {
+            padding: 0.266667rem;
+        }
+
+        .msg-right .title {
+            font-size: 0.426667rem;
+            color: #333;
+        }
+
+        .msg-right .date {
+            font-size: 0.293333rem;
+            color: #999;
+            font-weight: normal;
+        }
+
+        .msg-right .desc {
+            margin-top: 0.133333rem;
+            font-size: 0.346667rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="msg-header clearfix">
+        <a href="javascript:void(0);" class="baseIcon iconBack fl"></a>
+        <span class="c-333">消息</span>
+        <a href="javascript:void(0);" class="fr clear">清空全部</a>
+    </div>
+</section>
+
+<section class="container msg-content">
+    <div class="each-msg">
+        <div class="media-left">
+            <span class="baseIcon iconMsg"></span>
+        </div>
+        <div class="media-right msg-right">
+            <h3 class="clearfix title">平台公告 <span class="fr date">2015-10-11</span></h3>
+
+            <p class="desc">2015冬款上新2015冬款上新2015冬款上新</p>
+        </div>
+    </div>
+    <div class="each-msg">
+        <div class="media-left">
+            <span class="baseIcon iconMsg"></span>
+        </div>
+        <div class="media-right msg-right">
+            <h3 class="clearfix title">平台公告 <span class="fr date">2015-10-11</span></h3>
+
+            <p class="desc">2015冬款上新2015冬款上新2015冬款上新</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
