@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAUA,OAAO;EACN,KAAK,EAAC,SAAS;;AAGhB,GAAG;EACF,SAAS,EAAC,SAAS",
-"sources": ["px2rem_sass_01.scss"],
-"names": [],
-"file": "px2rem_sass_01.css"
-}
